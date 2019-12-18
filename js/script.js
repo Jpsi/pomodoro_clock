@@ -1,5 +1,4 @@
 var element1 = document.getElementById("break-increment")
-
 element1.addEventListener("click", function(){
   let element = document.getElementById("break-length");
   let length = parseInt(element.innerHTML);
@@ -9,7 +8,6 @@ element1.addEventListener("click", function(){
 });
 
 var element2 = document.getElementById("break-decrement")
-
 element2.addEventListener("click", function(){
   let element = document.getElementById("break-length")
   let length = parseInt(element.innerHTML);
@@ -19,7 +17,6 @@ element2.addEventListener("click", function(){
 });
 
 var element3 = document.getElementById("session-increment")
-
 element3.addEventListener("click", function(){
   let element = document.getElementById("session-length")
   let length = parseInt(element.innerHTML);
@@ -29,7 +26,6 @@ element3.addEventListener("click", function(){
 });
 
 var element4 = document.getElementById("session-decrement")
-
 element4.addEventListener("click", function(){
   let element = document.getElementById("session-length")
   let length = parseInt(element.innerHTML);
@@ -39,13 +35,13 @@ element4.addEventListener("click", function(){
 });
 
 var element5 = document.getElementById("start_stop")
-
 element5.addEventListener("click", function(){
   // let element = document.getElementById("time-left");
   // setInterval(updateTime, 1000);
 });
 
-// Code below is a draft - needs to be fixed
+// var secondsLeft = 25*60;
+// export const stylizeTime = (seconds) => String(Math.floor(secondsLeft/60)) + ":" + String(secondsLeft%60);
 
 // function updateTime() {
 //   let element = document.getElementById("time-left");
@@ -63,6 +59,5 @@ element5.addEventListener("click", function(){
 
 
 var element6 = document.getElementById("reset")
-
 element6.addEventListener("click", function(){
 });
