@@ -1,7 +1,6 @@
 var element1 = document.getElementById("break-increment")
 
 element1.addEventListener("click", function(){
-  element1.style.color = "blue";
   let element = document.getElementById("break-length");
   let length = parseInt(element.innerHTML);
   if  (length < 60) {
@@ -12,7 +11,6 @@ element1.addEventListener("click", function(){
 var element2 = document.getElementById("break-decrement")
 
 element2.addEventListener("click", function(){
-  element2.style.color = "blue";
   let element = document.getElementById("break-length")
   let length = parseInt(element.innerHTML);
   if  (length > 0) {
@@ -23,7 +21,6 @@ element2.addEventListener("click", function(){
 var element3 = document.getElementById("session-increment")
 
 element3.addEventListener("click", function(){
-  element3.style.color = "blue";
   let element = document.getElementById("session-length")
   let length = parseInt(element.innerHTML);
   if  (length < 60) {
@@ -34,7 +31,6 @@ element3.addEventListener("click", function(){
 var element4 = document.getElementById("session-decrement")
 
 element4.addEventListener("click", function(){
-  element4.style.color = "blue";
   let element = document.getElementById("session-length")
   let length = parseInt(element.innerHTML);
   if  (length > 0) {
@@ -45,7 +41,6 @@ element4.addEventListener("click", function(){
 var element5 = document.getElementById("start_stop")
 
 element5.addEventListener("click", function(){
-  element5.style.color = "blue";
   // let element = document.getElementById("time-left");
   // setInterval(updateTime, 1000);
 });
@@ -70,5 +65,4 @@ element5.addEventListener("click", function(){
 var element6 = document.getElementById("reset")
 
 element6.addEventListener("click", function(){
-  element6.style.color = "blue";
 });
