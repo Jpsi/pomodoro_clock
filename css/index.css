@@ -1,0 +1,30 @@
+.container {
+  float: left;
+  display: table;
+  height: 100px;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  vertical-align: middle;
+}
+
+.contained-element {
+  display: table-cell;
+  vertical-align: middle;
+  margin: inherit;
+  height: inherit;
+}
+
+.button {
+  color: white;
+  padding: 4px 10px;
+  background-color: red;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.button:hover {
+  background-color: blue;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}

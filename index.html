@@ -3,39 +3,7 @@
 <head>
   <title>Pomodoro Clock</title>
   <link rel='icon' href='images/favicon.ico' type='image/x-icon'/ >
-  <style>
-    .container {
-      float: left;
-      display: table;
-      height: 100px;
-      margin-top: 0;
-      margin-bottom: 0;
-      margin-left: auto;
-      margin-right: auto;
-      vertical-align: middle;
-    }
-
-    .contained-element {
-      display: table-cell;
-      vertical-align: middle;
-      margin: inherit;
-      height: inherit;
-    }
-
-    .button {
-      color: white;
-      padding: 4px 10px;
-      background-color: red;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    .button:hover {
-      background-color: blue;
-      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    }
-
-  </style>
+  <link rel='stylesheet' href='css/index.css' type='text/css'/ >
 </head>
 <body>
   <div id=page-title>
@@ -58,9 +26,9 @@
   <span id=break-increment class="button">Increase break length</span>
   <span id=session-increment class="button">Increase session length</span>
   <div id=timer-label>Session</div>
-  <div id=time-left>25:00</div>
+  <div id=time-left></div>
   <span id=start_stop class="button">Start/Stop</span>
   <span id=reset class="button">Reset</span>
 </body>
-<script src="js/script.js"></script>
+<script src="js/index.js"></script>
 </html>
