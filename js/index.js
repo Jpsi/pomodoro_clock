@@ -1,9 +1,12 @@
 var defaultSessionLengthInMinutes = 25;
 var defaultBreakLengthInMinutes = 5;
 var sessionLengthInMinutes = defaultSessionLengthInMinutes;
+var breakLengthInMinutes = defaultBreakLengthInMinutes;
 var timer = false;
 var isReset = false;
+var inSession = true;
 var element_ids = ["time-left",
+                   "timer-label",
                    "break-length",
                    "break-increment",
                    "break-decrement",
@@ -11,7 +14,8 @@ var element_ids = ["time-left",
                    "session-increment",
                    "session-decrement",
                    "start_stop",
-                   "reset"];
+                   "reset",
+                   "beep"];
 var elements = {};
 for (let element of element_ids) {
   elements[element] = document.getElementById(element);
@@ -23,7 +27,24 @@ const padWithZero = (string, totalLength=2) => ("0"+string).substr(-totalLength)
 
 const readTime = (string) => parseInt(string.slice(0,2))*60 + parseInt(string.slice(3,5));
 
-const updateTime = () => elements["time-left"].innerHTML = stylizeTime(readTime(elements["time-left"].innerHTML)-1);
+const updateTime = () => {
+  if (elements["time-left"].innerHTML == "00:00") {
+    if (inSession) {
+      elements["time-left"].innerHTML = stylizeTime(breakLengthInMinutes*60-1);
+      elements["timer-label"].innerHTML = "Break"
+      inSession = false;
+    } else {
+      elements["time-left"].innerHTML = stylizeTime(sessionLengthInMinutes*60-1);
+      elements["timer-label"].innerHTML = "Session"
+      inSession = true;
+    }
+  } else {
+    if (elements["time-left"].innerHTML == "00:01") {
+      elements["beep"].play();
+    }
+    elements["time-left"].innerHTML = stylizeTime(readTime(elements["time-left"].innerHTML)-1);
+  }
+}
 
 const stopTimer = () => {
   if (timer) {
@@ -35,6 +56,8 @@ const stopTimer = () => {
 }
 
 const resetTime = () => {
+  elements["beep"].pause();
+  elements["beep"].currentTime = 0;
   if (timer) {
     stopTimer()
   }
@@ -55,14 +78,16 @@ elements["reset"].addEventListener("click", resetTime);
 elements["break-increment"].addEventListener("click", () => {
   let length = parseInt(elements["break-length"].innerHTML);
   if  (length < 60) {
-    elements["break-length"].innerHTML = length + 1;
+    breakLengthInMinutes += 1;
+    elements["break-length"].innerHTML = breakLengthInMinutes;
   };
 });
 
 elements["break-decrement"].addEventListener("click", () => {
   let length = parseInt(elements["break-length"].innerHTML);
   if  (length > 0) {
-    elements["break-length"].innerHTML = length - 1;
+    breakLengthInMinutes -= 1;
+    elements["break-length"].innerHTML = breakLengthInMinutes;
   };
 });
 
@@ -89,6 +114,7 @@ elements["start_stop"].addEventListener("click", () => {
     if (isReset && (readTime(elements["time-left"].innerHTML) != sessionLengthInMinutes*60)) {
       elements["time-left"].innerHTML = stylizeTime(elements["session-length"].innerHTML*60);
     }
+    isReset = false;
     timer = setInterval(updateTime, 1000);
   }
 });
