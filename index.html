@@ -4,35 +4,48 @@
   <title>Pomodoro Clock</title>
   <link rel='icon' href='images/favicon.ico' type='image/x-icon'/ >
   <link rel='stylesheet' href='css/index.css' type='text/css'/ >
+  <!-- <link rel='stylesheet' href='css/index-dev.css' type='text/css'/ > -->
+  <link href="https://fonts.googleapis.com/css?family=Cinzel&display=swap" rel="stylesheet">
 </head>
 <body>
   <audio id="beep">
     <source src="sounds/beep.ogg" type="audio/ogg">
     Your browser does not support the audio element.
   </audio>
-  <div id=page-title>
-    <div class="container" style="width:45%;">
-      <h1 class="contained-element" style="text-align: right;">Pomodoro</h1>
+
+  <div id="header">
+    <img style="display: inline; height: 70px; margin: 20px ; vertical-align: -40px;" src="images/logo.png">
+    <h1 style="display: inline; color: black; /*text-shadow: 1px 1px 1px rgba(0,0,0,0.62)*/; font-family: 'Cinzel', serif; font-size: 40px">Pomodoro Clock</h1>
+    <img style="display: inline; height: 70px; margin: 20px ; vertical-align: -40px;" src="images/logo.png">
+    <hr style="margin: 0 auto; width: 40%">
+  </div>
+
+  <div id="page">
+    <div id="column-left">
+      <div id=session-label style="margin:110px 0 7px 0;">Session</div>
+      <span id=session-decrement class="button">-</span>
+      <span id=session-length style="display: inline-block; width: 2em;">25</span>
+      <span id=session-increment class="button">+</span>
     </div>
-    <div class="container" style="width:10%">
-      <img class="contained-element" src="images/logo.png">
+
+    <div id="column-middle">
+      <div style="margin: 20px 0;"><span id=timer-label style="font-size: 30px; padding: 4px 10px; border: 1pt solid black;">Session</span></div>
+      <div id=time-left style="overflow:hidden; font-size: 100px; margin: 15px 0"></div>
+      <div style="margin: 20px 0;">
+        <span id=start_stop class="button" style="margin: 0 3px">Start/Pause</span>
+        <span id=reset class="button">Reset</span>
+      </div>
     </div>
-    <div class="container" style="width:45%;">
-      <h1 class="contained-element" style="text-align: left;">Clock</h1>
+
+    <div id="column-right">
+      <div id=break-label style="margin:110px 0 7px 0;">Break</div>
+      <span id=break-decrement class="button" >-</span>
+      <span id=break-length style="display: inline-block; width: 2em;">5</span>
+      <span id=break-increment class="button">+</span>
     </div>
   </div>
-  <div id=break-label>Break Length:</div>
-  <div id=break-length>5</div>
-  <div id=session-label>Session Length:</div>
-  <div id=session-length>25</div>
-  <span id=break-decrement class="button" >Decrease break length</span>
-  <span id=session-decrement class="button">Decrease session length</span>
-  <span id=break-increment class="button">Increase break length</span>
-  <span id=session-increment class="button">Increase session length</span>
-  <div id=timer-label>Session</div>
-  <div id=time-left></div>
-  <span id=start_stop class="button">Start/Stop</span>
-  <span id=reset class="button">Reset</span>
+
+
 </body>
 <script src="js/index.js"></script>
 </html>

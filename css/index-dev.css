@@ -1,0 +1,24 @@
+#header {
+  background-color: #B2D6FF;
+}
+#page {
+  border: 3pt solid red;
+}
+#column-left {
+  background-color: #F5CF8E;
+}
+#column-middle {
+  background-color: #D6E9FE;
+}
+#column-middle {
+  background-color: #D6E9FE;
+}
+#column-right {
+  background-color: #F09A9D;
+}
+
+div, h1, img {
+  border: 1pt solid black;
+  background-color: grey;
+}
+
