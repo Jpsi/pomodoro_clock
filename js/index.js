@@ -96,6 +96,9 @@ elements["session-increment"].addEventListener("click", () => {
   if  (length < 60) {
     sessionLengthInMinutes += 1;
     elements["session-length"].innerHTML = sessionLengthInMinutes;
+    if (!timer && isReset) {
+      elements["time-left"].innerHTML = stylizeTime(sessionLengthInMinutes*60)
+    }
   };
 });
 
@@ -104,6 +107,9 @@ elements["session-decrement"].addEventListener("click", () => {
   if  (length > 0) {
     sessionLengthInMinutes -= 1;
     elements["session-length"].innerHTML = sessionLengthInMinutes;
+    if (!timer && isReset) {
+      elements["time-left"].innerHTML = stylizeTime(sessionLengthInMinutes*60)
+    }
   };
 });
 
