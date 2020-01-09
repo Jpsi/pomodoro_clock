@@ -66,6 +66,7 @@ const resetTime = () => {
   breakLengthInMinutes = defaultBreakLengthInMinutes;
   elements["session-length"].innerHTML = sessionLengthInMinutes;
   elements["break-length"].innerHTML = breakLengthInMinutes;
+  elements["timer-label"].innerHTML = "Session"
   isReset = true;
 }
 
